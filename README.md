@@ -1,6 +1,11 @@
 # [A Python Calculator with a GUI and an executable](https://github.com/jacobhallberg/Python-GUI-Calculator)
 A simple, but functional calculator. 
 
+![Picture of Created Calculator](https://imgur.com/dV02kq9.png)
+
+
+
+
 ## Getting started
 
 There are a couple ways to download the calculator:
