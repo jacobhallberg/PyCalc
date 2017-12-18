@@ -1,1 +1,1 @@
-/home/jacob/Downloads/PythonPractice/Jacob's Calculator/__pycache__
+Jacob's Calculator/__pycache__
