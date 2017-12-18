@@ -1,6 +1,11 @@
 # [A Python Calculator with a GUI and an executable](https://github.com/jacobhallberg/Python-GUI-Calculator)
 A simple, but functional calculator. 
 
+![Picture of Created Calculator](https://imgur.com/dV02kq9.png)
+
+
+
+
 ## Getting started
 
 There are a couple ways to download the calculator:
@@ -11,6 +16,8 @@ There are a couple ways to download the calculator:
 ### What's in the download?
 
 The download includes the Calculator.py and ExeCal.py files. The Calculator.py file has the structural components of the GUI and the ExeCal.py file contains the functional aspects of the buttons, as well as the calculations needed.
+
+The download also includes a standalone exe file which can be used to run the calculator directly without a call to Python.
 
 
 ### Why use this Calculator?
