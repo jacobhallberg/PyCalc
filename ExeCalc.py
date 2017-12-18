@@ -1,63 +1,93 @@
+"""Args: None
+Returns: None
+Raises: None
+
+Takes UI from Calculator.py and applies functionality to each button.
+"""
 # Author: Jacob Hallberg
 # Last Edited: 12/17/2017
-
-from PyQt5 import QtCore, QtGui, QtWidgets
-from Calculator import Ui_Calculator
 from math import sqrt
+from PyQt5 import QtWidgets
+from Calculator import Ui_Calculator
+
 
 class Calculator(QtWidgets.QMainWindow, Ui_Calculator):
+    """Args: QtWidgets, QMainWindow, Ui_Calculator
+    Returns: None
+    Raises: None
+    """
+
     def __init__(self, parent=None):
-        self.displayString = ""
-        self.displayString2 = ""
-        self.whichString = 0
-        self.repeat = 0
-        self.operator = ""
+        """Args: None
+        Returns: None
+        Raises: None
+
+        Initializes all of the needed vars, as well as button click
+        functionality.
+        """
         super(Calculator, self).__init__(parent)
         self.setupUi(self)
-        self.Zero.clicked.connect(self.buttonClicked)
-        self.One.clicked.connect(self.buttonClicked)
-        self.Two.clicked.connect(self.buttonClicked)
-        self.Three.clicked.connect(self.buttonClicked)
-        self.Four.clicked.connect(self.buttonClicked)
-        self.Five.clicked.connect(self.buttonClicked)
-        self.Six.clicked.connect(self.buttonClicked)
-        self.Seven.clicked.connect(self.buttonClicked)
-        self.Eight.clicked.connect(self.buttonClicked)
-        self.Nine.clicked.connect(self.buttonClicked)
-        self.Minus.clicked.connect(self.buttonClicked)
-        self.Plus.clicked.connect(self.buttonClicked)
-        self.Divide.clicked.connect(self.buttonClicked)
-        self.Multiply.clicked.connect(self.buttonClicked)
-        self.Equal.clicked.connect(self.buttonClicked)
-        self.Decimal.clicked.connect(self.buttonClicked)
-        self.PlusMinus.clicked.connect(self.buttonClicked)
-        self.Sqrt.clicked.connect(self.buttonClicked)
-        self.C.clicked.connect(self.buttonClicked)
-        self.Back.clicked.connect(self.buttonClicked)
 
+        self.display_string = ""
+        self.display_string2 = ""
+        self.which_string = 0
+        self.repeat = 0
+        self.operator = ""
 
-    def buttonClicked(self):
+        self.Zero.clicked.connect(self.button_clicked)
+        self.One.clicked.connect(self.button_clicked)
+        self.Two.clicked.connect(self.button_clicked)
+        self.Three.clicked.connect(self.button_clicked)
+        self.Four.clicked.connect(self.button_clicked)
+        self.Five.clicked.connect(self.button_clicked)
+        self.Six.clicked.connect(self.button_clicked)
+        self.Seven.clicked.connect(self.button_clicked)
+        self.Eight.clicked.connect(self.button_clicked)
+        self.Nine.clicked.connect(self.button_clicked)
+        self.Minus.clicked.connect(self.button_clicked)
+        self.Plus.clicked.connect(self.button_clicked)
+        self.Divide.clicked.connect(self.button_clicked)
+        self.Multiply.clicked.connect(self.button_clicked)
+        self.Equal.clicked.connect(self.button_clicked)
+        self.Decimal.clicked.connect(self.button_clicked)
+        self.PlusMinus.clicked.connect(self.button_clicked)
+        self.Sqrt.clicked.connect(self.button_clicked)
+        self.C.clicked.connect(self.button_clicked)
+        self.Back.clicked.connect(self.button_clicked)
+
+    def button_clicked(self):
+        """Args: None
+        Returns: None
+        Raises: None
+        All button clicks from the user are sent to this function
+        and then routed to other helper functions
+        """
         sender = self.sender()
         if sender.text() in {'+', '-', '÷', '*', '='}:
             self.operations()
         elif sender.text() == 'C':
             self.clear()
         elif sender.text() == '←':
-            self.backSpace()        
+            self.back_space()
         elif sender.text() == '√':
-            self.root()         
+            self.s_root()
         elif sender.text() == '.':
-            self.addDecimal()
+            self.add_decimal()
         elif sender.text() == '±':
-            self.addRemoveMinus()               
-        else: 
-            self.stringAppender()                    
-
+            self.add_remove_minus()
+        else:
+            self.string_appender()
 
     def operations(self):
+        """Args: None
+        Returns: None
+        Raises: None
+        Views and makes decisions based on the sent string from
+        each operational button click.
+        """
         sender = self.sender()
         self.repeat = 0
-        self.whichString = 1
+        self.which_string = 1
         if sender.text() == '+':
             self.operator = '+'
         if sender.text() == '-':
@@ -66,93 +96,133 @@ class Calculator(QtWidgets.QMainWindow, Ui_Calculator):
             self.operator = '÷'
         if sender.text() == '*':
             self.operator = '*'
-        if sender.text() == '=': 
+        if sender.text() == '=':
             if self.operator == '+':
-                self.displayString = str(float(self.displayString) + float(self.displayString2))
+                self.display_string = str(
+                    float(self.display_string) + float(self.display_string2))
             if self.operator == '-':
-                self.displayString = str(float(self.displayString) - float(self.displayString2))
+                self.display_string = str(
+                    float(self.display_string) - float(self.display_string2))
             if self.operator == '÷':
-                self.displayString = str(format(float(self.displayString) / float(self.displayString2), '.2f'))
+                self.display_string = str(
+                    format(float(self.display_string) / float(self.display_string2), '.2f'))
             if self.operator == '*':
-                self.displayString = str(float(self.displayString) * float(self.displayString2))            
+                self.display_string = str(
+                    float(self.display_string) * float(self.display_string2))
 
-            self.displayString2 = ""
-            self.whichString = 0
+            self.display_string2 = ""
+            self.which_string = 0
             self.repeat = 1
-            self.NumberField.display(self.displayString)
+            self.NumberField.display(self.display_string)
 
-    def stringAppender(self):
+    def string_appender(self):
+        """Args: None
+        Returns: None
+        Raises: None
+        Each non-operational button press is treated as an append to a string
+        using string concatination.
+        """
         sender = self.sender()
-        if self.whichString == 0 and self.repeat == 0:
-            self.displayString =  self.displayString + sender.text()
-            self.NumberField.display(self.displayString)
-        elif self.whichString == 1 and self.repeat == 0:
-            self.displayString2 =  self.displayString2 + sender.text()
-            self.NumberField.display(self.displayString2)   
+        if self.which_string == 0 and self.repeat == 0:
+            self.display_string = self.display_string + sender.text()
+            self.NumberField.display(self.display_string)
+        elif self.which_string == 1 and self.repeat == 0:
+            self.display_string2 = self.display_string2 + sender.text()
+            self.NumberField.display(self.display_string2)
         else:
-            self.displayString = "" + sender.text()
+            self.display_string = "" + sender.text()
             self.repeat = 0
-            self.NumberField.display(self.displayString)
+            self.NumberField.display(self.display_string)
 
-    def addRemoveMinus(self):
-        if self.whichString == 0:
-            if '-' in self.displayString:
-                self.displayString = self.displayString[1:]
-                self.NumberField.display(self.displayString)
+    def add_remove_minus(self):
+        """Args: None
+        Returns: None
+        Raises: None
+        Checks if current string has a minus in the front, if it does
+        the minus is removed. Otherwise, a minus is added.
+        """
+        if self.which_string == 0:
+            if '-' in self.display_string:
+                self.display_string = self.display_string[1:]
+                self.NumberField.display(self.display_string)
             else:
-                self.displayString = '-' + self.displayString
-                self.NumberField.display(self.displayString)
-        if self.whichString == 1:
-            if '-' in self.displayString2:
-                self.displayString2 = self.displayString2[1:]
-                self.NumberField.display(self.displayString2)
+                self.display_string = '-' + self.display_string
+                self.NumberField.display(self.display_string)
+        if self.which_string == 1:
+            if '-' in self.display_string2:
+                self.display_string2 = self.display_string2[1:]
+                self.NumberField.display(self.display_string2)
             else:
-                self.displayString2 = '-' + self.displayString2 
-                self.NumberField.display(self.displayString2)
+                self.display_string2 = '-' + self.display_string2
+                self.NumberField.display(self.display_string2)
 
-    def addDecimal(self):
-        if self.whichString == 0:
-            if '.' in self.displayString:
+    def add_decimal(self):
+        """Args: None
+        Returns: None
+        Raises: None
+        Uses string concatination to add a decimals to the end of a string.
+        """
+        sender = self.sender()
+        if self.which_string == 0:
+            if '.' in self.display_string:
                 print("Uable to add Decimal")
             else:
-                self.displayString = self.displayString + sender.text() 
-                self.NumberField.display(self.displayString)
+                self.display_string = self.display_string + sender.text()
+                self.NumberField.display(self.display_string)
         else:
-            if '.' in self.displayString2:
+            if '.' in self.display_string2:
                 print("Uable to add Decimal")
             else:
-                self.displayString2 = self.displayString2 + sender.text()
-                self.NumberField.display(self.displayString2) 
+                self.display_string2 = self.display_string2 + sender.text()
+                self.NumberField.display(self.display_string2)
 
-    def backSpace(self):
-        if self.whichString == 0:
-            if len(self.displayString) == 1:
-                self.displayString = ""
-            else:    
-                self.displayString = self.displayString[:1]
-            self.NumberField.display(self.displayString)
-        if self.whichString == 1:
-            if len(self.displayString2) == 1:
-                self.displayString2 = ""
-            else:    
-                self.displayString2 = self.displayString[:1]
-            self.NumberField.display(self.displayString2)
+    def back_space(self):
+        """Args: None
+        Returns: None
+        Raises: None
+        Removes the last character of the current string.
+        """
+        if self.which_string == 0:
+            if len(self.display_string) == 1:
+                self.display_string = ""
+            else:
+                self.display_string = self.display_string[:1]
+            self.NumberField.display(self.display_string)
+        if self.which_string == 1:
+            if len(self.display_string2) == 1:
+                self.display_string2 = ""
+            else:
+                self.display_string2 = self.display_string[:1]
+            self.NumberField.display(self.display_string2)
 
-    def root(self):
-        if self.whichString == 0:
-                self.displayString = str(format(sqrt(float(self.displayString)), '.2f'))
-                self.NumberField.display(self.displayString)
-        if self.whichString == 1:
-                self.displayString2 = str(format(sqrt(float(self.displayString2)), '.2f'))
-                self.NumberField.display(self.displayString2) 
-                    
+    def s_root(self):
+        """Args: None
+        Returns: None
+        Raises: None
+        Performs a square root on current string.
+        """
+        if self.which_string == 0:
+            self.display_string = str(
+                format(sqrt(float(self.display_string)), '.2f'))
+            self.NumberField.display(self.display_string)
+        if self.which_string == 1:
+            self.display_string2 = str(
+                format(sqrt(float(self.display_string2)), '.2f'))
+            self.NumberField.display(self.display_string2)
+
     def clear(self):
-        self.displayString = ""
-        self.displayString2 = ""
-        self.whichString = 0
+        """Args: None
+        Returns: None
+        Raises: None
+        Resets all variables to their default state. Clears calculator.
+        """
+        self.display_string = ""
+        self.display_string2 = ""
+        self.which_string = 0
         self.repeat = 0
         self.operator = ""
         self.NumberField.display('0')
+
 
 if __name__ == "__main__":
     import sys
