@@ -186,13 +186,13 @@ class Calculator(QtWidgets.QMainWindow, Ui_Calculator):
             if len(self.display_string) == 1:
                 self.display_string = ""
             else:
-                self.display_string = self.display_string[:1]
+                self.display_string = self.display_string[:-1]
             self.NumberField.display(self.display_string)
         if self.which_string == 1:
             if len(self.display_string2) == 1:
                 self.display_string2 = ""
             else:
-                self.display_string2 = self.display_string[:1]
+                self.display_string2 = self.display_string[:-1]
             self.NumberField.display(self.display_string2)
 
     def s_root(self):

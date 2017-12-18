@@ -1,5 +1,5 @@
 """
-Generated python code using PyQt5 Designer. Excuse the bad formatting
+Generated python code using PyQt5 Designer. Need to fix bad formatting
 as this is generated UI code after making the UI using PyQt5 Designer.
 """
 # Author: Jacob Hallberg
