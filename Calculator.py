@@ -1,5 +1,10 @@
+"""
+Generated python code using PyQt5 Designer. Excuse the bad formatting
+as this is generated UI code after making the UI using PyQt5 Designer.
+"""
 # Author: Jacob Hallberg
 # Last Edited: 12/17/2017
+
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
