@@ -10,7 +10,7 @@ There are a couple ways to download the calculator:
 
 ### What's in the download?
 
-The download includes the Calculator.py and ExeCal.py files. The Calculator.py file has the structural components of the GUI and the ExeCal.py file contains the functional aspects of the buttons, as well as the calculations needd.
+The download includes the Calculator.py and ExeCal.py files. The Calculator.py file has the structural components of the GUI and the ExeCal.py file contains the functional aspects of the buttons, as well as the calculations needed.
 
 
 ### Why use this Calculator?
