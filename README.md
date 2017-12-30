@@ -6,14 +6,14 @@
 
 ```
 
-                                  _____        _____      _      
-                                 |  __ \      / ____|    | |     
-                                 | |__) |   _| |     __ _| | ___ 
-                                 |  ___/ | | | |    / _` | |/ __|
-                                 | |   | |_| | |___| (_| | | (__ 
-                                 |_|    \__, |\_____\__,_|_|\___|
-                                         __/ |                   
-                                        |___/     
+                                      _____        _____      _      
+                                     |  __ \      / ____|    | |     
+                                     | |__) |   _| |     __ _| | ___ 
+                                     |  ___/ | | | |    / _` | |/ __|
+                                     | |   | |_| | |___| (_| | | (__ 
+                                     |_|    \__, |\_____\__,_|_|\___|
+                                             __/ |                   
+                                            |___/     
 ```
 
 
@@ -30,13 +30,13 @@
 ## Getting Started
 
 There are a couple ways to download the calculator:
-- [Download the zip](https://github.com/jacobhallberg/Python-GUI-Calculator/archive/master.zip)
-- Clone the repo: `git clone https://github.com/jacobhallberg/Python-GUI-Calculator.git` 
+- [Download the zip](https://github.com/jacobhallberg/PyCalc.git/archive/master.zip)
+- Clone the repo: `git clone https://github.com/jacobhallberg/PyCalc.git` 
 
 
 ### What's in the Download?
 
-The download includes the Calculator.py and ExeCal.py files. The Calculator.py file has the structural components of the GUI and the ExeCal.py file contains the functional aspects of the buttons, as well as the calculations needed.
+The download includes the calculator_UI.py and calculator.py files. The calculator_UI.py file has the structural components of the GUI and the calculator.py file contains the functional aspects of the buttons, as well as the calculations needed.
 
 The download also includes a standalone exe file which can be used to run the calculator directly without a call to Python.
 
@@ -54,7 +54,7 @@ The above list is non-exhaustive. This calculator uses a Python built GUI and th
 
 
 ## License
-MIT License - see the [LICENSE](https://github.com/jacobhallberg/HuffmanCompression/blob/master/LICENSE) file for more details.
+MIT License - see the [LICENSE](https://github.com/jacobhallberg/PyCalc/blob/master/LICENSE) file for more details.
 
 Copyright (c) 2017 Jacob Hallberg
 
