@@ -39,3 +39,4 @@ All parts of the calculator are free to use under the [open-source MIT license](
 ## Acknowledgement
 
 This Calculator was created by [Jacob Hallberg](https://github.com/jacobhallberg).
+
