@@ -1,19 +1,40 @@
-# [A python calculator with a GUI and a standalone executable.](https://github.com/jacobhallberg/Python-GUI-Calculator)
-A simple, but functional calculator. 
+<h1 align="center">PyCalc</h1>
 
-![Picture of Created Calculator](https://imgur.com/dV02kq9.png)
+<p align="center">A simple, but functional python calculator with a GUI and a standalone executable..</p>
+
+<p align="center"><a href="#site">Check It Out!</a> | <a href="#documentation">Read the Docs</a></p>
+
+```
+
+                                  _____        _____      _      
+                                 |  __ \      / ____|    | |     
+                                 | |__) |   _| |     __ _| | ___ 
+                                 |  ___/ | | | |    / _` | |/ __|
+                                 | |   | |_| | |___| (_| | | (__ 
+                                 |_|    \__, |\_____\__,_|_|\___|
+                                         __/ |                   
+                                        |___/     
+```
 
 
+## Table of Contents
+- [Images](#images)
+- [Getting Started](#getting-started)
+- [Why use this Calculator?](#why-use-this-calculator)
+- [OS Support](#os-support)
+- [License](#license)
 
+## Images
+<img src="https://imgur.com/dV02kq9.png" width="200" height="300" />
 
-## Getting started
+## Getting Started
 
 There are a couple ways to download the calculator:
 - [Download the zip](https://github.com/jacobhallberg/Python-GUI-Calculator/archive/master.zip)
 - Clone the repo: `git clone https://github.com/jacobhallberg/Python-GUI-Calculator.git` 
 
 
-### What's in the download?
+### What's in the Download?
 
 The download includes the Calculator.py and ExeCal.py files. The Calculator.py file has the structural components of the GUI and the ExeCal.py file contains the functional aspects of the buttons, as well as the calculations needed.
 
@@ -33,9 +54,7 @@ The above list is non-exhaustive. This calculator uses a Python built GUI and th
 
 
 ## License
+MIT License - see the [LICENSE](https://github.com/jacobhallberg/HuffmanCompression/blob/master/LICENSE) file for more details.
 
-All parts of the calculator are free to use under the [open-source MIT license](https://opensource.org/licenses/MIT)
+Copyright (c) 2017 Jacob Hallberg
 
-## Acknowledgement
-
-This Calculator was created by [Jacob Hallberg](https://github.com/jacobhallberg).
