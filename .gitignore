@@ -1,4 +1,5 @@
 __pycache__
 calc.ico
-build
-dist
+build/
+dist/
+
