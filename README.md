@@ -4,18 +4,30 @@
 
 <p align="center"><a href="#site">Check It Out!</a> | <a href="#documentation">Read the Docs</a></p>
 
+```
+
+                                  _____        _____      _      
+                                 |  __ \      / ____|    | |     
+                                 | |__) |   _| |     __ _| | ___ 
+                                 |  ___/ | | | |    / _` | |/ __|
+                                 | |   | |_| | |___| (_| | | (__ 
+                                 |_|    \__, |\_____\__,_|_|\___|
+                                         __/ |                   
+                                        |___/     
+```
+
+
 ## Table of Contents
 - [Images](#images)
-- [Getting Started](#gettingstarted)
-- [What's in the Download?](#what'sinthedownload?)
-- [Why use this Calculator?](#whyusethiscalculator?)
-- [OS Support](#ossupport)
+- [Getting Started](#getting-started)
+- [Why use this Calculator?](#why-use-this-calculator)
+- [OS Support](#os-support)
 - [License](#license)
 
 ## Images
-![Picture of Created Calculator](https://imgur.com/dV02kq9.png)
+<img src="https://imgur.com/dV02kq9.png" width="200" height="300" />
 
-## Getting started
+## Getting Started
 
 There are a couple ways to download the calculator:
 - [Download the zip](https://github.com/jacobhallberg/Python-GUI-Calculator/archive/master.zip)
